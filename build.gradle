@@ -1,0 +1,55 @@
+plugins {
+    id 'java'
+    id 'org.springframework.boot' version '3.4.2'
+    id 'com.diffplug.spotless' version '7.0.2'
+    id 'org.graalvm.buildtools.native' version '0.10.4'
+}
+
+group = 'br.com.adlermedrado'
+version = '0.0.1-SNAPSHOT'
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(21)
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+spotless {
+    java {
+        googleJavaFormat()
+        targetExclude("build/generated/**/*.java")
+    }
+}
+
+dependencies {
+    implementation platform("org.springframework.boot:spring-boot-dependencies:3.4.2")
+    implementation platform("org.springframework.cloud:spring-cloud-dependencies:2024.0.0")
+    implementation 'org.springframework.boot:spring-boot-starter-actuator'
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'com.fasterxml.jackson.core:jackson-databind'
+    implementation 'org.apache.httpcomponents.client5:httpclient5:5.2'
+    implementation 'org.springframework.cloud:spring-cloud-starter-openfeign'
+    implementation 'io.micrometer:micrometer-registry-prometheus'
+    implementation 'org.slf4j:slf4j-simple:2.0.16'
+
+    developmentOnly 'org.springframework.boot:spring-boot-devtools:3.4.2'
+
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    testImplementation 'org.testcontainers:junit-jupiter'
+    testImplementation 'org.springframework.boot:spring-boot-testcontainers'
+    testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+}
+
+configurations {
+    configureEach {
+        exclude group: "ch.qos.logback", module: "logback-classic"
+    }
+}
+
+tasks.withType(Test).configureEach {
+    useJUnitPlatform()
+}
