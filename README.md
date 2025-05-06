@@ -4,10 +4,15 @@
 The project is built using **Spring Boot**, **GraalVM Native**, and integrates with **Loki** for log collection and **Prometheus** for metrics exposure.
 
 **🚀 Main Features:**
+
 ✅ Detects **common attacks**, such as **Brute Force**, **SQL Injection**, **XSS**, **RCE**, and **Path Traversal**.
+
 ✅ **Loki integration**, enabling efficient log analysis in distributed systems.
+
 ✅ **Exports metrics** to Prometheus, allowing monitoring via Grafana.
+
 ✅ **Optimized with caching and multithreading** for high-performance log processing.
+
 ✅ **GraalVM native build**, making the binary faster and more efficient.
 
 # ⚡ Getting Started
