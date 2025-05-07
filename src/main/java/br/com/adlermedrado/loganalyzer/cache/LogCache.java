@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class LogCache {
   private final Map<String, Long> cache = new ConcurrentHashMap<>();
-  private final long expirationTimeMillis = TimeUnit.MINUTES.toMillis(5); // Cache expira em 5 min
+  private final long expirationTimeMillis = TimeUnit.MINUTES.toMillis(5);
 
   public boolean isDuplicate(String logMessage) {
     long now = System.currentTimeMillis();
