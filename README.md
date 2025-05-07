@@ -1,3 +1,8 @@
+![License](https://img.shields.io/github/license/spacexnu/log-analyzer)
+![Last Commit](https://img.shields.io/github/last-commit/spacexnu/log-analyzer)
+![Issues](https://img.shields.io/github/issues/spacexnu/log-analyzer)
+![Stars](https://img.shields.io/github/stars/spacexnu/log-analyzer?style=social)
+
 🔍 Log Analyzer
 
 **Log Analyzer** is a tool for analyzing and detecting suspicious patterns in logs, with a focus on **cybersecurity**.
